@@ -78,7 +78,8 @@ func ReadConfig(path string, v interface{}) error {
 	return c.Read()
 }
 
-// CreateConfig creates all path and the JSON config file from you struct or other valid type.
+// CreateConfig creates all path and the JSON config file (if it not exists)
+// from you struct or other valid type.
 func CreateConfig(path string, v interface{}) error {
 	var c = Configer{FilePath: path, Config: v}
 	return c.Create()
